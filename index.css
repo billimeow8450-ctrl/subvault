@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@theme {
+ --color-slate-50:#2e251f; --color-slate-100:#342920; --color-slate-200:#46372c; --color-slate-300:#5b493b; --color-slate-400:#7c6c60; --color-slate-500:#8b7b6c; --color-slate-600:#a69787; --color-slate-700:#dfd3c4; --color-slate-800:#e9dfd2; --color-slate-900:#fffcf7; --color-slate-950:#f4eee5;
+ --color-indigo-200:#593b29; --color-indigo-300:#775238; --color-indigo-400:#936a48; --color-indigo-500:#a88360; --color-indigo-600:#684630; --color-indigo-700:#513421; --color-indigo-900:#eee0d0; --color-indigo-950:#f2e8dc;
+ --color-emerald-200:#295743; --color-emerald-300:#35664e; --color-emerald-400:#4e775c; --color-emerald-500:#6c9478; --color-emerald-950:#edf2e9;
+ --color-sky-200:#74532f; --color-sky-300:#83603c; --color-sky-400:#997144; --color-sky-500:#bc976a; --color-sky-900:#e9dbca; --color-sky-950:#f3eade;
+ --color-purple-200:#5e4e3c; --color-purple-300:#766147; --color-purple-400:#8a7353; --color-purple-500:#ac9270; --color-purple-900:#e7ddcf; --color-purple-950:#f0e9df;
+ --color-rose-200:#843e35; --color-rose-300:#91483d; --color-rose-400:#a65345; --color-rose-500:#c27c6d; --color-rose-950:#f8e8e0;
+ --color-amber-300:#8b6126; --color-amber-400:#997235; --color-amber-500:#bb9349; --color-amber-950:#fbf1dc;
+}
+@layer base {
+ body { margin:0; background:#f5f0e8; color:#342920; font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif; -webkit-font-smoothing:antialiased; }
+ button, input, select, textarea {font:inherit;} button {cursor:pointer;} button:disabled {cursor:not-allowed;opacity:.5;} input,textarea,select {color-scheme:light;}
+ button:focus-visible,a:focus-visible {outline:2px solid #936a48;outline-offset:4px;} input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid #936a48;outline-offset:1px;}
+}
+.text-white {color:#342920;}
+[class*="bg-indigo-600"].text-white,[class*="bg-rose-600"].text-white,[class*="bg-rose-700"].text-white,[class*="bg-purple-600"].text-white,[class*="bg-sky-600"].text-white {color:#fffaf3;}
+#root > div {min-height:100vh;}
+header {background:#fffcf7 !important;backdrop-filter:none!important;}
+header > div {min-height:76px;}
+header h1 {font-family:Georgia,serif;font-size:24px!important;font-weight:500!important;letter-spacing:-1px!important;}
+header h1 + span {display:none;}
+main {padding-top:4px!important;padding-bottom:32px!important;}
+.display-title {font-family:Georgia,"Times New Roman",serif;font-size:clamp(29px,3vw,42px);line-height:1.2;letter-spacing:-1.3px;margin:9px 0 10px;}
+.eyebrow {font-size:10px;letter-spacing:2px;color:#94775d;font-weight:700;}
+.intro-copy{font-size:13px;color:#857365;}
+.workspace-identity {display:flex;gap:8px;align-items:center;font-size:11px;color:#7c6c60;flex-wrap:wrap;}
+.sync-dot {width:6px;height:6px;border-radius:50%;background:#63836a;}
+.identity-email{max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-left:8px;}
+.quiet-button{padding:7px 10px;border:1px solid #ddcfbd;border-radius:7px;}
+.overview-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:28px;}
+.overview-card{text-align:left;display:flex;flex-direction:column;border:1px solid #e2d7c8;background:#fffcf7;border-radius:12px;padding:21px 23px;cursor:default;}
+.overview-card span{font-size:11px;color:#7c6c60;font-weight:500;}
+.overview-card strong{font-size:29px;letter-spacing:-1px;margin:7px 0;color:#493323;font-weight:500;}
+.overview-card small{font-size:10px;color:#93816f;}
+.overview-card.metric-3{background:#654631;border-color:#654631;cursor:pointer;}
+.overview-card.metric-3 span,.overview-card.metric-3 small{color:#e2cdb9;}.overview-card.metric-3 strong{color:#fff5e8;}
+main > aside {background:#eee5d8!important;}
+main > aside h2{font-size:10px!important;letter-spacing:1.8px;}
+main > aside input {background:#f7f1e8!important;}
+[class*="min-h-[500px]"] h3 {font-family:Georgia,serif;font-weight:400;font-size:25px;}
+[class*="fixed inset-0"] {background-color:#2b1d1466;}
+[class*="shadow-2xl"]{box-shadow:0 20px 80px #34241622;}
+.auth-layout {min-height:100vh;display:grid;grid-template-columns:1.1fr 1fr;}
+.auth-story{padding:60px 12%;background:#684a34;color:#f6ead9;display:flex;flex-direction:column;justify-content:center;}
+.auth-brand{font:28px Georgia,serif;margin-bottom:auto;display:flex;align-items:center;gap:12px;}
+.auth-story h1{font:clamp(40px,5vw,76px)/1.06 Georgia,serif;letter-spacing:-2px;margin:100px 0 24px;max-width:520px;}
+.auth-story p{color:#ddc8b1;font-size:15px;line-height:1.8;max-width:380px;}.auth-story footer{margin-top:auto;padding-top:90px;font-size:10px;letter-spacing:2px;color:#c9ae91;}
+.auth-main{display:flex;align-items:center;justify-content:center;padding:36px;}.auth-form{max-width:370px;width:100%;}.auth-form h2{font:34px Georgia,serif;margin:10px 0 14px;}.auth-form p{font-size:13px;color:#7c6c60;line-height:1.7;margin-bottom:28px;}
+.auth-form label{display:block;font-size:12px;margin:18px 0 8px;}.auth-form input{width:100%;border:1px solid #dbcebd;border-radius:8px;background:#fffdf8;padding:13px 14px;font-size:14px;}.auth-primary{width:100%;padding:14px;background:#684630;color:#fff8ee;border:0;border-radius:8px;margin-top:22px;font-size:13px;}.auth-form .message{padding:12px;background:#eee4d5;border-radius:7px;margin-top:16px;word-break:break-word;}.auth-form .text-action{font-size:12px;margin-top:16px;color:#805b3c;text-decoration:underline;}.setup-notice{padding:20px;background:#fff9ef;border:1px solid #dac8ae;border-radius:10px;font-size:13px;line-height:1.7;}
+::-webkit-scrollbar{width:5px;height:5px;}::-webkit-scrollbar-thumb{background:#d6c7b5;border-radius:9px;}
+@media(max-width:900px){.overview-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.auth-layout{grid-template-columns:1fr;}.auth-story{padding:30px;}.auth-story h1{font-size:40px;margin:40px 0 20px;}.auth-story footer{padding-top:30px;}.auth-brand{margin:0;}.identity-email{display:none;}}
+@media(max-width:600px){.workspace-intro{padding:24px 14px 20px;}.overview-card{padding:16px;}.overview-grid{gap:8px;}.overview-card strong{font-size:25px;}header > div {flex-wrap:wrap;padding-top:12px;padding-bottom:12px;} main{padding-left:14px!important;padding-right:14px!important;}.auth-main{padding:36px 22px;}}

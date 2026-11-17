@@ -15,7 +15,7 @@ import Toast from './Toast';
 import { sortAccountsByExpiry, getDaysLeft } from './dateUtils';
 import { Search, UploadCloud, Plus, X, Trash2, ArrowRight, ArrowLeft, Filter, CheckSquare, Layers, ShoppingBag } from 'lucide-react';
 
-export default function App({ initialData, onChange, cloudStatus, userEmail, onSignOut }) {
+export default function App({ initialData, onChange, cloudStatus, userEmail, onSignOut, onSetPassword }) {
   const [services, setServices] = useState(initialData.services || []);
   const [accounts, setAccounts] = useState(initialData.accounts || []);
   const [selectedServiceId, setSelectedServiceId] = useState(null);
@@ -317,7 +317,7 @@ export default function App({ initialData, onChange, cloudStatus, userEmail, onS
       <section className="workspace-intro max-w-[1600px] mx-auto w-full px-6 pt-9 pb-5">
         <div className="flex justify-between gap-4 flex-wrap items-center">
           <div><p className="eyebrow">YOUR PRIVATE WORKSPACE</p><h2 className="display-title">A little order. A lot of clarity.</h2><p className="intro-copy">Your subscriptions, stock, and sales. All in one considered space.</p></div>
-          <div className="workspace-identity"><span className="sync-dot" />{cloudStatus}<span className="identity-email">{userEmail}</span><button onClick={onSignOut} className="quiet-button">Sign out</button></div>
+          <div className="workspace-identity"><span className="sync-dot" />{cloudStatus}<span className="identity-email">{userEmail}</span><button onClick={onSetPassword} className="quiet-button">Set password</button><button onClick={onSignOut} className="quiet-button">Sign out</button></div>
         </div>
         <div className="overview-grid">
           {[['Total inventory', accounts.length, 'Across '+services.length+' services'], ['Fresh stock',totalFresh,'Ready for their next owner'], ['Active listings',totalListed,'Out in the marketplace'], ['Gross revenue', '$'+totalRevenue.toLocaleString('en-US',{minimumFractionDigits:2}), totalSold+' accounts delivered']].map(([label,value,hint],i)=><button key={label} className={'overview-card metric-'+i} onClick={i===3?()=>setIsProfitModalOpen(true):undefined}><span>{label}</span><strong>{value}</strong><small>{hint}</small></button>)}
